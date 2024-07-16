@@ -1,5 +1,7 @@
 package com.advent2023.days.utils;
 
+import java.util.Objects;
+
 public class Utils {
 
     private static final String ANSI_RED = "\u001B[31m";
@@ -7,7 +9,7 @@ public class Utils {
     public static final String ANSI_RESET = "\u001B[0m";
 
     public static void publishResult(long startTime, long expectedResult, long actualResult) {
-        String advent = Thread.currentThread().getStackTrace()[2].getFileName().replace(".java","");
+        String advent = Objects.requireNonNull(Thread.currentThread().getStackTrace()[2].getFileName()).replace(".java","");
         boolean pass = actualResult == expectedResult;
         String message = pass ? "" : "fail - expected " + expectedResult + ", ";
         String colour = pass ? ANSI_GREEN : ANSI_RED;
