@@ -1,4 +1,4 @@
-package SalesTax;
+package ca.gammon.salesTax;
 
 import javax.swing.*;
 import java.math.BigDecimal;

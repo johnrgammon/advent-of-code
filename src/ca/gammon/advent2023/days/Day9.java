@@ -1,4 +1,4 @@
-package com.advent2023.days;
+package ca.gammon.advent2023.days;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import com.advent2023.days.utils.Utils;
+import ca.gammon.advent2023.days.utils.Utils;
 
 public class Day9 {
 

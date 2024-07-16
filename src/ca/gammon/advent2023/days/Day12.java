@@ -1,6 +1,6 @@
-package com.advent2023.days;
+package ca.gammon.advent2023.days;
 
-import com.advent2023.days.utils.Utils;
+import ca.gammon.advent2023.days.utils.Utils;
 
 import java.util.*;
 

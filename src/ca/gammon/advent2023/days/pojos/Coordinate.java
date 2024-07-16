@@ -1,4 +1,4 @@
-package com.advent2023.days.pojos;
+package ca.gammon.advent2023.days.pojos;
 
 import java.util.Objects;
 

@@ -1,12 +1,12 @@
-package com.advent2023.days;
+package ca.gammon.advent2023.days;
 
-import static com.advent2023.days.Day7.HandType.FIVE_OF_A_KIND;
-import static com.advent2023.days.Day7.HandType.FOUR_OF_A_KIND;
-import static com.advent2023.days.Day7.HandType.FULL_HOUSE;
-import static com.advent2023.days.Day7.HandType.HIGH_CARD;
-import static com.advent2023.days.Day7.HandType.ONE_PAIR;
-import static com.advent2023.days.Day7.HandType.THREE_OF_A_KIND;
-import static com.advent2023.days.Day7.HandType.TWO_PAIR;
+import static ca.gammon.advent2023.days.Day7.HandType.FIVE_OF_A_KIND;
+import static ca.gammon.advent2023.days.Day7.HandType.FOUR_OF_A_KIND;
+import static ca.gammon.advent2023.days.Day7.HandType.FULL_HOUSE;
+import static ca.gammon.advent2023.days.Day7.HandType.HIGH_CARD;
+import static ca.gammon.advent2023.days.Day7.HandType.ONE_PAIR;
+import static ca.gammon.advent2023.days.Day7.HandType.THREE_OF_A_KIND;
+import static ca.gammon.advent2023.days.Day7.HandType.TWO_PAIR;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import com.advent2023.days.utils.Utils;
+import ca.gammon.advent2023.days.utils.Utils;
 
 public class Day7 {
 

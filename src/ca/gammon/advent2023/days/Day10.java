@@ -1,15 +1,15 @@
-package com.advent2023.days;
+package ca.gammon.advent2023.days;
 
-import com.advent2023.days.pojos.Coordinate;
-import com.advent2023.days.pojos.Direction;
-import com.advent2023.days.pojos.Grid;
-import com.advent2023.days.utils.Utils;
+import ca.gammon.advent2023.days.pojos.Coordinate;
+import ca.gammon.advent2023.days.pojos.Direction;
+import ca.gammon.advent2023.days.pojos.Grid;
+import ca.gammon.advent2023.days.utils.Utils;
 
 import java.util.*;
 
-import static com.advent2023.days.Day10.ConnectorType.CONNECTOR_TERMINUS;
-import static com.advent2023.days.Day10.ConnectorType.fromString;
-import static com.advent2023.days.pojos.Direction.*;
+import static ca.gammon.advent2023.days.Day10.ConnectorType.CONNECTOR_TERMINUS;
+import static ca.gammon.advent2023.days.Day10.ConnectorType.fromString;
+import static ca.gammon.advent2023.days.pojos.Direction.*;
 
 
 public class Day10 {

@@ -1,4 +1,4 @@
-package SalesTax;
+package ca.gammon.salesTax;
 
 
 public class Main {

@@ -1,9 +1,9 @@
-package com.advent2023.days;
+package ca.gammon.advent2023.days;
 
-import com.advent2023.days.pojos.Coordinate;
-import com.advent2023.days.pojos.Direction;
-import com.advent2023.days.pojos.Grid;
-import com.advent2023.days.utils.Utils;
+import ca.gammon.advent2023.days.pojos.Coordinate;
+import ca.gammon.advent2023.days.pojos.Direction;
+import ca.gammon.advent2023.days.pojos.Grid;
+import ca.gammon.advent2023.days.utils.Utils;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
-import static com.advent2023.days.pojos.Direction.*;
+import static ca.gammon.advent2023.days.pojos.Direction.*;
 
 public class Day16 {
 

@@ -1,7 +1,7 @@
-package com.advent2023;
+package ca.gammon.advent2023;
 
 
-import com.advent2023.days.Day18;
+import ca.gammon.advent2023.days.Day18;
 
 import java.util.List;
 
