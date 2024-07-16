@@ -176,23 +176,9 @@ public class Day11 {
         //endregion
     }
 
-    private record ExpansionFactor() {
-
-        public static int getPartOne() {
-            return 1;
-        }
-
-        public record PartTwo() {
-
-            public static int getDemo() {
-                return 99;
-            }
-
-            public static int get() {
-                return 999_999;
-            }
-        }
-    }
+    private static final int EXPANSION_FACTOR_PART_ONE = 1;
+    private static final int EXPANSION_FACTOR_PART_TWO = 999_999;
+    private static final int EXPANSION_FACTOR_PART_TWO_DEMO = 99;
 
     private static class GalaxyPath {
         private final Coordinate galaxy1;
@@ -315,11 +301,11 @@ public class Day11 {
 
         if (part == 1) {
             expectedResult = isDemo ? PART_ONE_DEMO_EXPECTED_RESULT : PART_ONE_EXPECTED_RESULT;
-            expansionFactor = ExpansionFactor.getPartOne();
+            expansionFactor = EXPANSION_FACTOR_PART_ONE;
 
         } else {
             expectedResult = isDemo ? PART_TWO_DEMO_EXPECTED_RESULT : PART_TWO_EXPECTED_RESULT;
-            expansionFactor = isDemo ? ExpansionFactor.PartTwo.getDemo() : ExpansionFactor.PartTwo.get();
+            expansionFactor = isDemo ? EXPANSION_FACTOR_PART_TWO_DEMO : EXPANSION_FACTOR_PART_TWO;
 
         }
 
