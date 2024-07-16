@@ -143,11 +143,12 @@ public class Day14 {
         private final int height;
         private final int width;
 
-        private final char CUBIC_ROCK = '#';
-        private final char ROUND_ROCK = 'O';
-        private final char END_OF_ROW = '\n';
-
         public PlatformSolver(String dataString) {
+            final char CUBIC_ROCK = '#';
+            final char ROUND_ROCK = 'O';
+            final char END_OF_ROW = '\n';
+            // SPACE char ignored
+
             cubicRockCoordinates = new HashSet<>();
             roundRockCoordinates = new HashSet<>();
 
@@ -161,7 +162,6 @@ public class Day14 {
                     continue;
                 }
 
-                // SPACE char ignored
                 if (ch == ROUND_ROCK) {
                     roundRockCoordinates.add(new Coordinate(row, column));
                 } else if (ch == CUBIC_ROCK) {

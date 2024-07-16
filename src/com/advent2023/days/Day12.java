@@ -1,13 +1,8 @@
 package com.advent2023.days;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-
 import com.advent2023.days.utils.Utils;
+
+import java.util.*;
 
 public class Day12 {
 
@@ -1041,8 +1036,8 @@ public class Day12 {
 
     private static class MemoKey {
         // Using MemoKey instead of just a string is faster for some reason.
-        private List<Character> springStatuses;
-        private List<Integer> damageClusterSizes;
+        private final List<Character> springStatuses;
+        private final List<Integer> damageClusterSizes;
 
         public MemoKey(List<Character> springs, List<Integer> groupSizes) {
             this.springStatuses = springs;
@@ -1104,7 +1099,7 @@ public class Day12 {
             return countsMap.get(memoKey); // If memoKey already exists, reuse the solution rather than recalculate.
         }
 
-        if (damagedClusterSizes.size() == 0) { // Check if groupings to look for have been exhausted.
+        if (damagedClusterSizes.isEmpty()) { // Check if groupings to look for have been exhausted.
             // If there are none to find and none present, the solution counts; otherwise, it does not.
             long computedResult = springStatuses.contains(STATUS_DAMAGED) ? 0 : 1;
 

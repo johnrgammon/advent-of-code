@@ -1,13 +1,9 @@
 package com.advent2023.days;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
-
 import com.advent2023.days.utils.Utils;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Day5 {
 
@@ -478,7 +474,7 @@ public class Day5 {
             List<Long> locations = Arrays.stream(seedValues)
                     .map(Long::parseLong)
                     .map(Day5::getLocationForSeed)
-                    .collect(Collectors.toList());
+                    .toList();
 
             actualLocation =  Collections.min(locations);
             expectedLocation = isDemo ? EXPECTED_LOCATION_DEMO_PART_ONE : EXPECTED_LOCATION_PART_ONE;

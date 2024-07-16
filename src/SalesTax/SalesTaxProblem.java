@@ -1,5 +1,6 @@
 package SalesTax;
 
+import javax.swing.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -8,11 +9,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.swing.*;
-
 public class SalesTaxProblem {
 
-    private static String BULLET = "\u00B7 ";
+    private static final String BULLET = "· ";
     private static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_RESET = "\u001B[0m";
     private static final String DATA_INPUT;
@@ -44,13 +43,11 @@ public class SalesTaxProblem {
         private static final BigDecimal SALES_TAX_RATE = new BigDecimal("0.10"); // 10%
         private static final BigDecimal IMPORT_DUTY_RATE = new BigDecimal("0.05"); // 5%
 
-        private String inputItem;
-        private int quantity;
-        private String description;
-        private BigDecimal itemPrice;
-        private BigDecimal originalPrice;
-        private boolean taxExempt;
-        private boolean imported;
+        private final int quantity;
+        private final String description;
+        private final BigDecimal originalPrice;
+        private final boolean taxExempt;
+        private final boolean imported;
         private BigDecimal salesTax;
         private BigDecimal duty;
         private BigDecimal totalPrice;
@@ -64,14 +61,13 @@ public class SalesTaxProblem {
         private static final Pattern ITEM_PATTERN = Pattern.compile("(\\d+) (.+?) at (\\d+\\.\\d{2})");
 
         public Item(String rawInput) {
-            this.inputItem = rawInput;
             Matcher matcher = ITEM_PATTERN.matcher(rawInput);
             if (matcher.find()) {
                 this.quantity = Integer.parseInt(matcher.group(1));
                 this.description = matcher.group(2).trim();
-                this.itemPrice = new BigDecimal(matcher.group(3).trim()).setScale(2, RoundingMode.HALF_UP);
+                BigDecimal itemPrice = new BigDecimal(matcher.group(3).trim()).setScale(2, RoundingMode.HALF_UP);
                 this.originalPrice = itemPrice.multiply(new BigDecimal(quantity));
-                this.taxExempt = TAX_EXEMPTED_GOODS.stream().anyMatch(good -> rawInput.contains(good));
+                this.taxExempt = TAX_EXEMPTED_GOODS.stream().anyMatch(rawInput::contains);
                 this.imported = rawInput.contains("import") || rawInput.contains("imported");
                 this.salesTax = BigDecimal.ZERO;
                 this.duty = BigDecimal.ZERO;
@@ -139,10 +135,10 @@ public class SalesTaxProblem {
         }
         if (continueProcessing) {
             BigDecimal totalLevies = items.stream()
-                    .map(item -> item.getLevies())
+                    .map(Item::getLevies)
                     .reduce(BigDecimal.ZERO, BigDecimal::add);
             BigDecimal total = items.stream()
-                    .map(item -> item.getTotalPrice())
+                    .map(Item::getTotalPrice)
                     .reduce(BigDecimal.ZERO, BigDecimal::add);
             System.out.println(BULLET + "Sales taxes: " + totalLevies + " Total: " + total);
         } else {
@@ -172,7 +168,7 @@ public class SalesTaxProblem {
         }
     }
 
-    public static void main(Object... args) {
+    public static void main() {
         Arrays.stream(DATA_INPUT.split("\n\n")).forEach(SalesTaxProblem::processItems);
     }
 }

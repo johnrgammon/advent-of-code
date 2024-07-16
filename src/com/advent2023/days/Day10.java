@@ -312,7 +312,7 @@ public class Day10 {
 
     public static class TileGrid extends Grid<Tile> {
         /** Making height and width updated on put shaved another 3 seconds compared to the other TileGrid
-         * after having made height() and width() multi-threaded.
+         * after having made height() and width() multithreaded.
          * Initially, part 2 took 19 seconds.
          * Parallel isInsidePerimeter, 13 seconds
          * Parallel getNextUnconnectedTile, 9 seconds
@@ -445,34 +445,32 @@ public class Day10 {
     }
 
     private static TileGrid tileGrid = new TileGrid();
-    private static int part;
-    private static long expectedResult;
     private static long actualResult;
     private static long startTime;
     private static List<Coordinate> perimeter = new ArrayList<>();
 
     public static void main(Object... args) {
-        part = Integer.parseInt(String.valueOf(args[0]));
+        int part = Integer.parseInt(String.valueOf(args[0]));
         boolean isDemo = args.length > 1 && args[1].equals(true);
+        Map<String, Integer> dataToExpectedResult;
+
         startTime = System.nanoTime();
 
         if (part == 1) {
 
-            Map<String, Integer> data;
             if (isDemo) {
-                data = Map.of(
+                dataToExpectedResult = Map.of(
                         PART_ONE_DEMO_DATA_SIMPLE_LOOP, PART_ONE_RESULT_DEMO_SIMPLE_LOOP,
                         PART_ONE_DEMO_DATA_SIMPLE_LOOP_PLUS, PART_ONE_RESULT_DEMO_SIMPLE_LOOP_PLUS,
                         PART_ONE_DEMO_DATA_IN_BETWEEN_LOOP, PART_ONE_RESULT_DEMO_IN_BETWEEN_LOOP,
                         PART_ONE_DEMO_DATA_COMPLEX_LOOP, PART_ONE_RESULT_DEMO_COMPLEX_LOOP
                 );
             } else {
-                data = Map.of(DATA, PART_ONE_RESULT);
+                dataToExpectedResult = Map.of(DATA, PART_ONE_RESULT);
             }
 
-            data.forEach((dataStr, dataResult) -> {
+            dataToExpectedResult.forEach((dataStr, expectedResult) -> {
                 tileGrid = getTiles(dataStr);
-                expectedResult = dataResult;
 
                 perimeter = identifyPerimeterTiles(tileGrid);
 
@@ -483,20 +481,18 @@ public class Day10 {
         }
         else {
 
-            Map<String, Integer> data;
             if (isDemo) {
-                data = Map.of(
+                dataToExpectedResult = Map.of(
                         PART_TW0_DEMO_DATA_SIMPLE, PART_TWO_RESULT_DEMO_SIMPLE,
                         PART_TWO_DEMO_LESS_SIMPLE, PART_TWO_RESULT_DEMO_LESS_SIMPLE,
                         PART_TWO_DEMO_DATA_COMPLEX, PART_TWO_RESULT_DEMO_COMPLEX
                 );
             } else {
-                data = Map.of(DATA, PART_TWO_RESULT);
+                dataToExpectedResult = Map.of(DATA, PART_TWO_RESULT);
             }
 
-            data.forEach((dataStr, dataResult) -> {
+            dataToExpectedResult.forEach((dataStr, expectedResult) -> {
                 TileGrid tileGrid = getTiles(dataStr);
-                long expectedResult = dataResult;
 
                 perimeter = identifyPerimeterTiles(tileGrid);
 

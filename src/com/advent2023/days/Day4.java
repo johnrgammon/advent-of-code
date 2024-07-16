@@ -1,12 +1,12 @@
 package com.advent2023.days;
 
+import com.advent2023.days.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import com.advent2023.days.utils.Utils;
 
 public class Day4 {
 
@@ -251,20 +251,20 @@ public class Day4 {
             String winningNumbersStr = cardArray[1];
             List<Integer> winningNumbers = Arrays.stream(winningNumbersStr.trim().split(" "))
                     .map(Integer::parseInt)
-                    .collect(Collectors.toList());
+                    .toList();
 
             String actualNumbersStr = rowArray[1];
             List<Integer> actualNumbers = Arrays.stream(actualNumbersStr.trim().split(" "))
                     .map(Integer::parseInt)
-                    .collect(Collectors.toList());
+                    .toList();
 
             List<Integer> winners = actualNumbers.stream()
                     .filter(winningNumbers::contains)
-                    .collect(Collectors.toList());
+                    .toList();
 
             cardValues.add((int) Math.pow(2, winners.size() - 1));
 
-            if (winners.size() > 0) {
+            if (!winners.isEmpty()) {
                 int cardCount = cardCounts.get(cardNumber);
                 for (int i = 1; i <= winners.size(); i++) {
                     int cardToIncrement = cardNumber + i;

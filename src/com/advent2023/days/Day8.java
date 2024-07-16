@@ -1,16 +1,15 @@
 package com.advent2023.days;
 
+import com.advent2023.days.utils.Utils;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import com.advent2023.days.utils.Utils;
-
 public class Day8 {
 
-    private static final int DAY = 8;
     private static final String MAP_DATA_DEMO_RL;
     private static final String MAP_DATA_DEMO_LLR;
     private static final String MAP_DATA_DEMO_PART_TWO;
@@ -848,7 +847,6 @@ public class Day8 {
 
     private static String[] instructions;
     private static TreeMap<String, NextLocations> nodes;
-    private static int part;
     private static long expectedResult;
     private static long actualResult;
 
@@ -881,7 +879,7 @@ public class Day8 {
     }
 
     public static void main(Object... args) {
-        part = Integer.parseInt(String.valueOf(args[0]));
+        int part = Integer.parseInt(String.valueOf(args[0]));
         boolean isDemo = args.length > 1 && args[1].equals(true);
         long startTime = System.nanoTime();
 
