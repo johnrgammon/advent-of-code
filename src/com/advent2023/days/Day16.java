@@ -230,11 +230,11 @@ public class Day16 {
          * Encapsulation: The interface defines a clear contract for mirror behaviour,
          * hiding the implementation details from the Mirror class.
          * This makes the code more modular and easier to understand. ???
+         * public interface MirrorInterface {
+         *             char getValue();
+         *             List<Direction> getNextHeading(Direction currentHeading);
+         *         }
          */
-//        public interface MirrorInterface {
-//            char getValue();
-//            List<Direction> getNextHeading(Direction currentHeading);
-//        }
 
         public Mirror(char symbol, int row, int column) {
             this.mirrorType = MirrorType.fromChar(symbol);

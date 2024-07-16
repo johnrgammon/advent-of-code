@@ -360,23 +360,6 @@ public class Day15 {
     }
 
     private static void slotTheLenses(Map<String, Lens> labelToLensMap) {
-//        labelToLensMap.values().stream()
-//                .map(Lens::getBoxNumber)
-//                .distinct()
-//                .forEach(boxNumber -> {
-//                    AtomicInteger slotNumber = new AtomicInteger(1);
-//                    labelToLensMap.values().stream()
-//                            .filter(lens -> lens.getBoxNumber() == boxNumber)
-//                            .forEach(lens -> lens.setSlotNumber(slotNumber.getAndIncrement()));
-//                });
-
-//        Map<Integer, List<Lens>> lensesByBoxNumber = labelToLensMap.values().stream()
-//                .collect(Collectors.groupingBy(Lens::getBoxNumber));
-//
-//        lensesByBoxNumber.forEach((boxNumber, lenses) -> {
-//            AtomicInteger slotNumber = new AtomicInteger(1);
-//            lenses.forEach(lens -> lens.setSlotNumber(slotNumber.getAndIncrement()));
-//        });
 
         Map<Integer, AtomicInteger> boxToSlotNumber = new HashMap<>();
 
