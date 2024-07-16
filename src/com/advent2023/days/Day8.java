@@ -17,7 +17,7 @@ public class Day8 {
     static {
         MAP_DATA_DEMO_RL = """
                 RL
-                            
+                
                 AAA = (BBB, CCC)
                 BBB = (DDD, EEE)
                 CCC = (ZZZ, GGG)
@@ -27,13 +27,13 @@ public class Day8 {
                 ZZZ = (ZZZ, ZZZ)""";
         MAP_DATA_DEMO_LLR = """
                 LLR
-                                
+                
                 AAA = (BBB, BBB)
                 BBB = (AAA, ZZZ)
                 ZZZ = (ZZZ, ZZZ)""";
         MAP_DATA_DEMO_PART_TWO = """
                 LR
-                                
+                
                 11A = (11B, XXX)
                 11B = (XXX, 11Z)
                 11Z = (11B, XXX)
@@ -44,7 +44,7 @@ public class Day8 {
                 XXX = (XXX, XXX)""";
         MAP_DATA = """
                 LLRRRLRLLRLRRLRLRLRRRLLRRLRRRLRRRLRRRLRRRLRRRLRRLRLLRRRLRRLLRLRLLLRRLRRLRLRLRLRRRLRLRRRLRRLLLRRRLLRRLLRRLLRRRLLLLRLRLRRRLRLRRRLRLLLRLRRLRRRLRRRLRRRLRRRLLRRLLLLRRLLRRLLRRLRLRRRLRRRLRRRLRRLRRRLRRLRRLRRLRLRRRLRRLRRRLRRRLRRLRLRRRLRRLLRLRRLRRRLRLRRLRRRLRRLRRLRRRLLRRRR
-                                
+                
                 GXF = (XQB, GFH)
                 QQC = (HQF, BNK)
                 TPP = (XNG, FDD)
