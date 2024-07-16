@@ -278,8 +278,8 @@ public class Day10 {
 
     public static class Tile {
 
-        ConnectorType connectorType;
-        Coordinate coordinate;
+        final ConnectorType connectorType;
+        final Coordinate coordinate;
         boolean isPerimeter;
 
         public Tile(String connector, int row, int column) {

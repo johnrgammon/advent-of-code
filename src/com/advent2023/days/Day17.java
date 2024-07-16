@@ -179,10 +179,10 @@ public class Day17 {
     }
 
     private static class QueuedBlock {
-        Coordinate coordinate;
-        Direction direction;
-        int directionCount;
-        int pathHeatLoss;
+        final Coordinate coordinate;
+        final Direction direction;
+        final int directionCount;
+        final int pathHeatLoss;
 
         QueuedBlock(Coordinate coordinate, Direction direction, int directionCount, int currentPathHeatLoss) {
             this.coordinate = coordinate;
@@ -209,13 +209,13 @@ public class Day17 {
     }
 
     private static class BlockUtils {
-        int[][] grid;
-        int gridHeight;
-        int gridWidth;
-        int minHeadingCount;
-        int maxHeadingCount;
-        Coordinate startCoordinate;
-        Coordinate endCoordinate;
+        final int[][] grid;
+        final int gridHeight;
+        final int gridWidth;
+        final int minHeadingCount;
+        final int maxHeadingCount;
+        final Coordinate startCoordinate;
+        final Coordinate endCoordinate;
         int minHeatLoss;
 
         BlockUtils(String dataStr, int minHeadingCount, int maxHeadingCount) {
