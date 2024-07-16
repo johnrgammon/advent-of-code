@@ -809,6 +809,7 @@ public class Day18 {
         }
     }
 
+    //TODO: Determine if this, from Day 10, can be used to make part 1 work with the real data and not just the demo data.
     private static boolean isInsideBoundingBox(DigPerimeter digPerimeter, Coordinate coordinate) {
 
         int minRow = digPerimeter.getFirstRow();
